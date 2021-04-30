@@ -1,3 +1,4 @@
+// hooks start start with use and Must start with UpperCase letter
 // useState is a React function that takes a value (string, number, boolean, array)
 // invoking useState returns an array with 2 values, the value and the function that controls that value
 import React, { useState } from "react";
@@ -5,6 +6,7 @@ import React, { useState } from "react";
 const UseStateBasics = () => {
   // console.log(useState(['hello world'));
 
+  // hooks must be placed in the function or component body
   // destructured way of using useState hook
   //    value, function
   const [text, setText] = useState("random title");
@@ -14,7 +16,7 @@ const UseStateBasics = () => {
     if (text === 'random title') {
       setText("hello world");
     } else {
-      setText('random title')
+      setText('random title') 
     }
   };
 
