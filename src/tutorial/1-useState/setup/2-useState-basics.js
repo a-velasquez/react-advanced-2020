@@ -5,7 +5,7 @@ import React, { useState } from "react";
 const UseStateBasics = () => {
   // console.log(useState(['hello world'));
 
-  // destructured way
+  // destructured way of using useState hook
   //    value, function
   const [text, setText] = useState("random title");
 
