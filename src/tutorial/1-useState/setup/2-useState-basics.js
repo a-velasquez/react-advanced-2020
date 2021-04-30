@@ -1,6 +1,7 @@
 // hooks start start with use and Must start with UpperCase letter
 // useState is a React function that takes a value (string, number, boolean, array)
 // invoking useState returns an array with 2 values, the value and the function that controls that value
+// useState can be imported along with React 
 import React, { useState } from "react";
 
 const UseStateBasics = () => {
