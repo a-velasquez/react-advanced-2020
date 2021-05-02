@@ -5,11 +5,12 @@ const UseStateCounter = () => {
   const [value, setValue] = useState(0);
 
   const complexIncrease = () => {
-    //passing setTimeout function directly in arg 
+    
     setTimeout(() => {
       // setValue(value + 1)
+      //passing setTimeout function directly in arg
       setValue((prevState) => {
-        console.log(prevState)
+        console.log(prevState);
         return prevState + 1;
       });
     }, 2000);

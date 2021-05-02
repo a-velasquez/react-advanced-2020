@@ -8,7 +8,8 @@ const UseStateArray = () => {
   const removeItem = (id) => {
     // returns new array
     let newPeople = people.filter((person) => person.id !== id)
-    // passing setPeople new array
+    // passing setPeople new array, new value directly
+    // see 5-useState-counter for functional way of using setPeople
     setPeople(newPeople)
   }
   return (  
