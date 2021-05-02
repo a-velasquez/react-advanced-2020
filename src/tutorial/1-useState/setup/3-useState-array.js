@@ -11,7 +11,7 @@ const UseStateArray = () => {
     // passing setPeople new array
     setPeople(newPeople)
   }
-  return (
+  return (  
     // <></> same as React.Fragment
     <>
       {
