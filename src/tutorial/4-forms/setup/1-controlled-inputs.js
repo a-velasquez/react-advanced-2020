@@ -7,9 +7,10 @@ import React, { useState } from 'react';
 
 const ControlledInputs = () => {
   
-  // handleSubmit(() => {
-  
-  // })
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(e.target.type)
+  }
 
   return (
     <>
@@ -30,7 +31,7 @@ const ControlledInputs = () => {
             name='email'
           />
         </div>
-        <button type='submit'>add person</button>
+        <button type='submit' onClick={handleSubmit}>add person</button>
       </form>
     </>
   )
