@@ -12,7 +12,6 @@ const ControlledInputs = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(e.target.type)
   }
 
   return (
@@ -24,6 +23,8 @@ const ControlledInputs = () => {
             type='text'
             id='firstName'
             name='firstName'
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
           />
         </div>
         <div className='form-control'>
