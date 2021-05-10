@@ -13,8 +13,18 @@ const ControlledInputs = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(firstName, email)
-  }
+    if (firstName && email) {
+      const person = { id: new Date().getTime().toString(), firstName, email }
+      console.log(person)
+      setPeople((people) => {
+        return [...people, person]
+      });
+      setFirstName('')
+      setEmail('')
+    } else {
+      console.log('empty values')
+    }
+  };
 
   return (
     <>
