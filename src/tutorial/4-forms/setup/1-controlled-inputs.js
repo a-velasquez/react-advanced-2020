@@ -12,6 +12,7 @@ const ControlledInputs = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault()
+    console.log(firstName, email)
   }
 
   return (
@@ -33,6 +34,8 @@ const ControlledInputs = () => {
             type='text'
             id='email'
             name='email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <button type='submit' onClick={handleSubmit}>add person</button>
