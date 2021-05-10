@@ -9,6 +9,7 @@ const ControlledInputs = () => {
 
   const [firstName, setFirstName] = useState('')
   const [email, setEmail] = useState('')
+  const [people, setPeople] = useState([])
   
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -17,7 +18,8 @@ const ControlledInputs = () => {
 
   return (
     <>
-      <form className='form'>
+      <article>
+        <form className='form'>
         <div className='form-control'>
           <label htmlFor='firstName'>Name : </label>
           <input
@@ -40,6 +42,7 @@ const ControlledInputs = () => {
         </div>
         <button type='submit' onClick={handleSubmit}>add person</button>
       </form>
+      </article>
     </>
   )
 };
