@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 // JS
 // const input = document.getElementById('myText');
 // const inputValue = input.value
@@ -7,24 +7,25 @@ import React, { useState } from 'react';
 // dynamic object keys
 
 const ControlledInputs = () => {
-  const [firstName, setFirstName] = useState('');
-  const [email, setEmail] = useState('');
-  const [people, setPeople] = useState([]);
+  const [firstName, setFirstName] = useState('')
+  const [email, setEmail] = useState('')
+  const [people, setPeople] = useState([])
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (firstName && email) {
-      const person = { id: new Date().getTime().toString(), firstName, email };
-      console.log(person);
+      const person = { id: new Date().getTime().toString(), firstName, email }
+      console.log(person)
       setPeople((people) => {
-        return [...people, person];
+        return [...people, person]
       });
-      setFirstName('');
-      setEmail('');
+      setFirstName('')
+      setEmail('')
     } else {
-      console.log('empty values');
+      console.log('empty values')
     }
-  };
+  }
+  
   return (
     <>
       <article>
