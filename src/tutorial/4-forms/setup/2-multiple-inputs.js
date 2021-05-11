@@ -19,18 +19,13 @@ const ControlledInputs = () => {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    if (firstName && email) {
-      console.log(person)
-      setPeople((people) => {
-        return [...people, person]
-      });
-      setFirstName('')
-      setEmail('')
-    } else {
-      console.log('empty values')
+    e.preventDefault();
+    if (person.firstName && person.email && person.age) {
+      const newPerson = { ...person, id: new Date().getTime().toString() };
+      setPeople([...people, newPerson]);
+      setPerson({ firstName: '', email: '', age: '' });
     }
-  }
+  };
 
   return (
     <>
@@ -42,9 +37,10 @@ const ControlledInputs = () => {
               type='text'
               id='firstName'
               name='firstName'
-              value={firstName}
+              value={person.firstName}
               onChange={handleChange}
               // onChange={(e) => setFirstName(e.target.value)}
+              // refactored - lines: 15 - 19
             />
           </div>
           <div className='form-control'>
@@ -53,19 +49,29 @@ const ControlledInputs = () => {
               type='email'
               id='email'
               name='email'
-              value={email}
+              value={person.email}
               onChange={handleChange}
-              // onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className='form-control'>
+            <label htmlFor='age'>Age : </label>
+            <input
+              type='age'
+              id='age'
+              name='age'
+              value={person.age}
+              onChange={handleChange}
             />
           </div>
           <button type='submit'>add person</button>
         </form>
         {people.map((person, index) => {
-          const { id, firstName, email } = person;
+          const { id, firstName, email, age } = person;
           return (
             <div className='item' key={id}>
               <h4>{firstName}</h4>
               <p>{email}</p>
+              <p>{age}</p>
             </div>
           );
         })}
