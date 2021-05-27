@@ -8,21 +8,21 @@ const reducer = (state, action) => {
 }
 
 const defaultState = {
-  people: [],
+  people: data,
   isModalOpen: false,
-  modalContent: ''
+  modalContent: '',
 }
 
 const Index = () => {
   const [name, setName] = useState('')
-  const [state, dispatch] = useReducer(reducer, defaultState)
+  const [state, dispatch] = useReducer(reducer, defaultState);
   
   const handleSubmit = (e) => {
     e.preventDefault()
     if (name) {
 
     } else {
-      
+
     }
   }
   return (
@@ -33,6 +33,13 @@ const Index = () => {
         </div>
         <button type='submit'>add</button>
       </form>
+      {state.people.map((person) => {
+        return (
+          <div key={person.id} className='item'>
+            <h4>{person.name}</h4>
+          </div>
+        )
+      })}
     </>
   )
 };
