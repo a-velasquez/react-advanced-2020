@@ -10,7 +10,7 @@ const reducer = (state, action) => {
 const defaultState = {
   people: data,
   isModalOpen: false,
-  modalContent: '',
+  modalContent: 'hello',
 }
 
 const Index = () => {
@@ -27,6 +27,9 @@ const Index = () => {
   }
   return (
     <>
+      {state.isModalOpen && (
+        <Modal modalContent={state.modalContent} />
+      )}
       <form className='form' onSubmit={handleSubmit}>
         <div>
           <input type='text' value={name} onChange={(e) => setName(e.target.value)}></input>
