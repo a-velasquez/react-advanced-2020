@@ -4,7 +4,16 @@ import { data } from '../../../data';
 // reducer function
 
 const Index = () => {
-  return <h2>useReducer</h2>;
+  return (
+    <>
+      <form className='form'>
+        <div>
+          <input type='text' value='' ></input>
+        </div>
+        <button type='submit'>add</button>
+      </form>
+    </>
+  )
 };
 
 export default Index;
