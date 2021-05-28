@@ -11,5 +11,8 @@ export const reducer = (state, action) => {
 	if (action.type === 'NO_VALUE') {
 		return {...state, isModalOpen: true, modalContent: 'please enter a value'}
 	}
+	if (action.type === 'CLOSE_MODAL') {
+		return {...state, isModalOpen: false}
+	}
 	throw new Error('no matching action type')
 }
