@@ -15,25 +15,38 @@ const PropDrilling = () => {
 	return (
 		<section>
 			<h3>prop drilling</h3>
-			<List people={people} />
+			<List people={people} removePerson={removePerson} />
 		</section>
 	)
 }
 
-const List = ({people}) => {
+const List = ({people, removePerson}) => {
 	return (
 		<>
 			{people.map((person) => {
-				return <SinglePerson key={person.id} {...person} />
+				return (
+					<SinglePerson
+						key={person.id}
+						{...person}
+						removePerson={removePerson}
+					/>
+				)
 			})}
 		</>
 	)
 }
 
-const SinglePerson = ({id, name}) => {
+const SinglePerson = ({id, name, removePerson}) => {
 	return (
-		<div>
+		<div className='item'>
 			<h4>{name}</h4>
+			<button
+				onClick={() => {
+					removePerson(id)
+				}}
+			>
+				remove person
+			</button>
 		</div>
 	)
 }
