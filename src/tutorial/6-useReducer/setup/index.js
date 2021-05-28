@@ -1,4 +1,4 @@
-import React, {useState, useReducer} from 'react'
+import React, {useState, useReducer, useEffect} from 'react'
 import Modal from './Modal'
 import {data} from '../../../data'
 import {reducer} from './reducer'
@@ -24,9 +24,15 @@ const Index = () => {
 		}
 	}
 
+	const closeModal = () => {
+		dispatch({type: 'CLOSE_MODAL'})
+	}
+
 	return (
 		<>
-			{state.isModalOpen && <Modal modalContent={state.modalContent} />}
+			{state.isModalOpen && (
+				<Modal closeModal={closeModal} modalContent={state.modalContent} />
+			)}
 			<form className='form' onSubmit={handleSubmit}>
 				<div>
 					<input
