@@ -16,8 +16,9 @@ const Index = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		if (name) {
-			const newItem = {id: new Date().getTime().toString(), name}
-			dispatch({type: 'ADD_ITEM', payload: newItem})
+			const newPerson = {id: new Date().getTime().toString(), name}
+			dispatch({type: 'ADD_ITEM', payload: newPerson})
+			setName(' ')
 		} else {
 			dispatch({type: 'NO_VALUE'})
 		}
