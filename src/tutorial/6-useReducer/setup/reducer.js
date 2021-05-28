@@ -5,7 +5,7 @@ export const reducer = (state, action) => {
 			...state,
 			people: newPeople,
 			isModalOpen: 'true',
-			modalContent: 'item added'
+			modalContent: 'person added'
 		}
 	}
 	if (action.type === 'NO_VALUE') {
@@ -13,6 +13,17 @@ export const reducer = (state, action) => {
 	}
 	if (action.type === 'CLOSE_MODAL') {
 		return {...state, isModalOpen: false}
+	}
+	if (action.type === 'REMOVE_ITEM') {
+		const newPeople = state.people.filter(
+			(person) => person.id !== action.payload
+		)
+		return {
+			...state,
+			people: newPeople,
+			isModalOpen: true,
+			modalContent: 'person removed'
+		}
 	}
 	throw new Error('no matching action type')
 }
