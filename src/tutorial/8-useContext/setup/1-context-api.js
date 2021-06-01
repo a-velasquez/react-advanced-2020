@@ -14,7 +14,7 @@ const ContextAPI = () => {
 		})
 	}
 	return (
-		<PersonContext.Provider value={{removePerson}}>
+		<PersonContext.Provider value={{removePerson, people}}>
 			<h3>Context API/useContext</h3>
 			<List />
 		</PersonContext.Provider>
@@ -22,9 +22,10 @@ const ContextAPI = () => {
 }
 
 const List = ({people}) => {
+	const peopleData = useContext(PersonContext)
 	return (
 		<>
-			{people.map((person) => {
+			{peopleData.people.map((person) => {
 				return <SinglePerson key={person.id} {...person} />
 			})}
 		</>
