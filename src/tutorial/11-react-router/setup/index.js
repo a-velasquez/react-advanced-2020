@@ -20,6 +20,7 @@ const ReactRouterSetup = () => {
 				<Route path='/about'>
 					<About />
 				</Route>
+				<Route path='/person/:id' children={<Person />}></Route>
 				<Route path='/people'>
 					<People />
 				</Route>
